@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Droplet } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,21 +19,8 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <div className="relative">
-              <Droplet className="h-10 w-10 text-accent fill-accent" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="h-3 w-3 rounded-full bg-primary" />
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-extrabold text-xl text-primary tracking-tight">
-                WIESER
-              </span>
-              <span className="font-heading text-xs text-muted-foreground tracking-widest">
-                PETROLEUM
-              </span>
-            </div>
+          <a href="#home" className="flex items-center">
+            <img src={logo} alt="Wieser Petroleum" className="h-14 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
