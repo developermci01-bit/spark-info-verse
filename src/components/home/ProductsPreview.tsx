@@ -1,4 +1,4 @@
-import { ArrowRight, Fuel, Settings, Snowflake, Droplet } from 'lucide-react';
+import { ArrowRight, Fuel, Settings, Snowflake, Circle, Droplet } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import productAdvantage from '@/assets/product-advantage.png';
@@ -6,10 +6,11 @@ import productActive from '@/assets/product-active.png';
 
 const ProductsPreview = () => {
   const categories = [
-    { icon: Fuel, name: 'Engine Oils', count: '12+ Products' },
-    { icon: Settings, name: 'Gear Oils', count: '8+ Products' },
-    { icon: Snowflake, name: 'Coolants', count: '6+ Products' },
-    { icon: Droplet, name: 'Grease', count: '10+ Products' },
+    { icon: Fuel, name: 'Engine Oils', count: '12+ Products', href: '/products/engine-oils' },
+    { icon: Settings, name: 'Gear & Brake Oils', count: '8+ Products', href: '/products/gear-brake-oils' },
+    { icon: Circle, name: 'Greases', count: '10+ Products', href: '/products/greases' },
+    { icon: Droplet, name: 'Hydraulic Oils', count: '6+ Products', href: '/products/hydraulic-oils' },
+    { icon: Snowflake, name: 'Coolants', count: '6+ Products', href: '/products/coolants' },
   ];
 
   return (
@@ -37,10 +38,11 @@ const ProductsPreview = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 mb-12">
           {categories.map((category, index) => (
-            <div
+            <Link
               key={index}
+              to={category.href}
               className="group bg-card rounded-2xl p-6 card-shadow hover:card-shadow-hover transition-all duration-300 border border-border hover:-translate-y-2 cursor-pointer"
             >
               <div className="p-4 rounded-xl bg-accent/10 w-fit mb-4 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
@@ -50,7 +52,7 @@ const ProductsPreview = () => {
                 {category.name}
               </h3>
               <p className="text-sm text-muted-foreground">{category.count}</p>
-            </div>
+            </Link>
           ))}
         </div>
 

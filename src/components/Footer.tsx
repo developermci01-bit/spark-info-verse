@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Droplet, Facebook, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
@@ -6,19 +7,19 @@ const Footer = () => {
   };
 
   const quickLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Products', href: '#products' },
-    { label: 'Why Us', href: '#why-us' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Products', href: '/products' },
+    { label: 'Why Us', href: '/why-us' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   const products = [
-    'Engine Oils',
-    'Shocker/Gear Oils',
-    'Coolant Oils',
-    'Grease',
-    'Brake Fluids',
+    { label: 'Engine Oils', href: '/products/engine-oils' },
+    { label: 'Gear & Brake Oils', href: '/products/gear-brake-oils' },
+    { label: 'Greases', href: '/products/greases' },
+    { label: 'Hydraulic Oils', href: '/products/hydraulic-oils' },
+    { label: 'Coolants', href: '/products/coolants' },
   ];
 
   const socialLinks = [
@@ -35,7 +36,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <a href="#home" className="flex items-center gap-2 mb-6">
+            <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="relative">
                 <Droplet className="h-10 w-10 text-accent fill-accent" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -50,7 +51,7 @@ const Footer = () => {
                   PETROLEUM
                 </span>
               </div>
-            </a>
+            </Link>
             <p className="text-primary-foreground/70 mb-6">
               Delivering excellence in petroleum products since 2014. Trusted by customers across 18+ Indian states and 6+ countries worldwide.
             </p>
@@ -74,12 +75,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-primary-foreground/70 hover:text-accent transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -91,12 +92,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {products.map((product, index) => (
                 <li key={index}>
-                  <a
-                    href="#products"
+                  <Link
+                    to={product.href}
                     className="text-primary-foreground/70 hover:text-accent transition-colors"
                   >
-                    {product}
-                  </a>
+                    {product.label}
+                  </Link>
                 </li>
               ))}
             </ul>
