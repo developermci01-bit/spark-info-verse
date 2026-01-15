@@ -132,7 +132,7 @@ const EngineOilsPage = () => {
                     <p className="text-sm text-muted-foreground mb-4">
                       {product.description}
                     </p>
-                    <ul className="space-y-2 mb-4 text-left">
+                    <ul className="space-y-2 text-left">
                       {product.features.map((feature, i) => (
                         <li key={i} className="flex items-center gap-2 text-sm text-foreground">
                           <div className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -140,10 +140,6 @@ const EngineOilsPage = () => {
                         </li>
                       ))}
                     </ul>
-                    <Button variant="accent" className="w-full group">
-                      View Details
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
                   </div>
                 </div>
               ))}
