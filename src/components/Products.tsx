@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Fuel, Settings, Snowflake, Circle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Fuel, Settings, Snowflake, Circle, Droplet } from 'lucide-react';
 import productAdvantage from '@/assets/product-advantage.png';
 import productActive from '@/assets/product-active.png';
 import productGear from '@/assets/product-gear.png';
@@ -11,28 +12,40 @@ const Products = () => {
       description: 'Premium engine oils with DOUBLEGRIP technology for superior engine protection and performance in all driving conditions.',
       icon: Fuel,
       image: productAdvantage,
+      href: '/products/engine-oils',
       features: ['50% better warm-up protection', 'Extended engine life', 'All-season performance'],
     },
     {
-      name: 'Shocker/Gear Oils',
-      description: 'High-performance gear and suspension oils designed for smooth operation and maximum protection of transmission systems.',
+      name: 'Gear & Brake Oils',
+      description: 'High-performance gear oils and brake fluids designed for smooth operation and maximum protection of transmission and braking systems.',
       icon: Settings,
       image: productGear,
-      features: ['Smooth gear shifting', 'Extreme pressure protection', 'Long-lasting formula'],
+      href: '/products/gear-brake-oils',
+      features: ['Smooth gear shifting', 'Extreme pressure protection', 'Reliable braking'],
     },
     {
-      name: 'Coolant Oils',
-      description: 'Advanced coolant formulations that prevent overheating and corrosion, ensuring optimal engine temperature control.',
-      icon: Snowflake,
-      image: productActive,
-      features: ['Anti-freeze protection', 'Corrosion inhibitors', 'Year-round protection'],
-    },
-    {
-      name: 'Grease',
+      name: 'Greases',
       description: 'Industrial-grade grease products for heavy machinery and automotive applications requiring superior lubrication.',
       icon: Circle,
       image: productAdvantage,
+      href: '/products/greases',
       features: ['High temperature stability', 'Water resistant', 'Heavy-duty formula'],
+    },
+    {
+      name: 'Hydraulic Oils',
+      description: 'High-quality hydraulic fluids for industrial and mobile equipment ensuring reliable performance and component protection.',
+      icon: Droplet,
+      image: productActive,
+      href: '/products/hydraulic-oils',
+      features: ['Excellent anti-wear', 'Thermal stability', 'Efficient power transfer'],
+    },
+    {
+      name: 'Coolants',
+      description: 'Advanced coolant formulations that prevent overheating and corrosion, ensuring optimal engine temperature control.',
+      icon: Snowflake,
+      image: productActive,
+      href: '/products/coolants',
+      features: ['Anti-freeze protection', 'Corrosion inhibitors', 'Year-round protection'],
     },
   ];
 
@@ -63,7 +76,7 @@ const Products = () => {
         </div>
 
         {/* Product Categories Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-20">
           {products.map((product, index) => (
             <div
               key={index}
@@ -90,8 +103,10 @@ const Products = () => {
                 ))}
               </ul>
               
-              <Button variant="link" className="p-0 text-accent hover:text-accent/80">
-                Learn More <ArrowRight className="h-4 w-4 ml-1" />
+              <Button variant="link" className="p-0 text-accent hover:text-accent/80" asChild>
+                <Link to={product.href}>
+                  Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                </Link>
               </Button>
             </div>
           ))}
@@ -132,8 +147,8 @@ const Products = () => {
                   <p className="text-primary-foreground/60 text-sm">
                     {product.type}
                   </p>
-                  <Button variant="accent" size="sm" className="mt-4">
-                    View Details
+                  <Button variant="accent" size="sm" className="mt-4" asChild>
+                    <Link to="/products/engine-oils">View Details</Link>
                   </Button>
                 </div>
               </div>
