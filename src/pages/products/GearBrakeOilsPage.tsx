@@ -1,62 +1,9 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Settings, Shield, Gauge, Droplets } from 'lucide-react';
-import productGear from '@/assets/product-gear.png';
-import productAdvantage from '@/assets/product-advantage.png';
+import ProductCatalog from '@/components/products/ProductCatalog';
+import { Settings, Shield, Gauge, Droplets } from 'lucide-react';
 
 const GearBrakeOilsPage = () => {
-  const products = [
-    {
-      name: 'Gear Max 80W-90',
-      description: 'Premium gear oil for manual transmissions and differentials.',
-      grade: '80W-90',
-      type: 'Gear Oil',
-      image: productGear,
-      features: ['Extreme pressure protection', 'Smooth shifting', 'Long service life'],
-    },
-    {
-      name: 'Gear Pro 85W-140',
-      description: 'Heavy-duty gear oil for commercial vehicles and trucks.',
-      grade: '85W-140',
-      type: 'Heavy Duty Gear Oil',
-      image: productAdvantage,
-      features: ['High load capacity', 'Thermal stability', 'Anti-wear protection'],
-    },
-    {
-      name: 'Shocker Fluid SF-10',
-      description: 'Specialized suspension oil for motorcycle front forks.',
-      grade: 'SAE 10',
-      type: 'Fork Oil',
-      image: productGear,
-      features: ['Smooth damping', 'Anti-foam formula', 'Seal compatible'],
-    },
-    {
-      name: 'Brake Fluid DOT 3',
-      description: 'High-performance brake fluid for disc and drum brakes.',
-      grade: 'DOT 3',
-      type: 'Brake Fluid',
-      image: productAdvantage,
-      features: ['High boiling point', 'Corrosion protection', 'All-weather performance'],
-    },
-    {
-      name: 'Brake Fluid DOT 4',
-      description: 'Premium brake fluid for high-performance braking systems.',
-      grade: 'DOT 4',
-      type: 'Brake Fluid',
-      image: productGear,
-      features: ['Superior heat resistance', 'Consistent pedal feel', 'ABS compatible'],
-    },
-    {
-      name: 'ATF Dexron III',
-      description: 'Automatic transmission fluid for smooth gear changes.',
-      grade: 'Dexron III',
-      type: 'ATF',
-      image: productAdvantage,
-      features: ['Friction optimized', 'Oxidation stability', 'Extended drain'],
-    },
-  ];
-
   const benefits = [
     { icon: Settings, title: 'Smooth Operation', description: 'Ensures seamless gear transitions and brake response.' },
     { icon: Shield, title: 'Component Protection', description: 'Guards against wear, corrosion, and premature failure.' },
@@ -106,46 +53,7 @@ const GearBrakeOilsPage = () => {
         </section>
 
         {/* Products Grid */}
-        <section className="py-16 lg:py-24">
-          <div className="container mx-auto px-4">
-            <h2 className="section-title text-center mb-12">Our Gear & Brake Oil Range</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {products.map((product, index) => (
-                <div
-                  key={index}
-                  className="group bg-card rounded-2xl p-6 card-shadow hover:card-shadow-hover transition-all duration-300 border border-border hover:-translate-y-2"
-                >
-                  <div className="flex justify-center mb-6">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="h-40 object-contain group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-semibold rounded-full mb-3">
-                      {product.grade}
-                    </span>
-                    <h3 className="font-heading text-xl font-bold text-foreground mb-2">
-                      {product.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      {product.description}
-                    </p>
-                    <ul className="space-y-2 text-left">
-                      {product.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-2 text-sm text-foreground">
-                          <div className="h-1.5 w-1.5 rounded-full bg-accent" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProductCatalog category="gear-brake-oils" title="Our Gear & Brake Oil Range" />
       </main>
       <Footer />
     </div>
