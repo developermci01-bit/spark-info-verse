@@ -1,7 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCatalog from '@/components/products/ProductCatalog';
-import { Snowflake, Shield, Thermometer, Droplets } from 'lucide-react';
+import { Snowflake, Shield, Thermometer, Droplets, Leaf } from 'lucide-react';
 import heroImg from '@/assets/products/coolant-hero.jpg';
 import img1 from '@/assets/products/coolant-1.jpg';
 import img2 from '@/assets/products/coolant-2.jpg';
@@ -9,14 +9,14 @@ import img3 from '@/assets/products/coolant-3.jpg';
 
 const CoolantsPage = () => {
   const benefits = [
-    { icon: Thermometer, title: 'Temperature Control', description: 'Prevents overheating and freezing in extreme conditions.' },
-    { icon: Shield, title: 'Corrosion Protection', description: 'Protects radiator, water pump, and engine components.' },
-    { icon: Droplets, title: 'System Longevity', description: 'Extends cooling system life with advanced inhibitors.' },
+    { icon: Thermometer, title: 'Temperature Control', description: 'Prevents overheating and freezing in extreme conditions for reliable year-round operation.' },
+    { icon: Shield, title: 'Corrosion Protection', description: 'Advanced inhibitors protect radiators, water pumps, and all engine cooling components.' },
+    { icon: Leaf, title: 'Emissions Compliance', description: 'DEF/AdBlue reduces NOx emissions, helping diesel vehicles meet BS-VI and Euro 6 standards.' },
   ];
 
   const gallery = [
     { src: img1, caption: 'Cooling Systems' },
-    { src: img2, caption: 'Coolant Range' },
+    { src: img2, caption: 'Coolant & DEF Range' },
     { src: img3, caption: 'Radiator Protection' },
   ];
 
@@ -31,20 +31,20 @@ const CoolantsPage = () => {
                 <div className="flex items-center gap-2 mb-4">
                   <Snowflake className="h-6 w-6 text-accent" />
                   <span className="font-heading text-sm font-semibold text-accent uppercase tracking-wider">
-                    Coolants
+                    Coolants & DEF/AdBlue
                   </span>
                 </div>
                 <h1 className="section-title text-foreground mb-6">
-                  Coolants for{' '}
-                  <span className="text-gradient">Optimal Engine Temperature</span>
+                  Complete Cooling &{' '}
+                  <span className="text-gradient">Emissions Solutions</span>
                 </h1>
                 <p className="text-lg text-muted-foreground">
-                  Advanced coolant formulations that prevent overheating and freezing while providing superior corrosion protection for all types of cooling systems.
+                  Advanced coolant formulations that prevent overheating and freezing, paired with premium DEF/AdBlue for modern diesel SCR systems — keeping engines protected and emissions compliant.
                 </p>
               </div>
               <div className="relative animate-fade-in">
                 <div className="absolute -inset-4 bg-accent/20 blur-3xl rounded-full" />
-                <img src={heroImg} alt="Engine coolants" width={1280} height={960} className="relative rounded-2xl border border-border shadow-2xl w-full h-auto max-h-[400px] object-cover" />
+                <img src={heroImg} alt="Engine coolants and DEF products" width={1280} height={960} className="relative rounded-2xl border border-border shadow-2xl w-full h-auto max-h-[400px] object-cover" />
               </div>
             </div>
           </div>
@@ -88,7 +88,7 @@ const CoolantsPage = () => {
           </div>
         </section>
 
-        <ProductCatalog category="coolants" title="Our Coolant & DEF Range" />
+        <ProductCatalog category="coolants" title="Our Coolant & DEF/AdBlue Range" />
       </main>
       <Footer />
     </div>
