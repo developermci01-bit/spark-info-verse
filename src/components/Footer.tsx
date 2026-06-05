@@ -22,6 +22,10 @@ const Footer = () => {
     { label: 'Coolants', href: '/products/coolants' },
   ];
 
+  const otherBrands = [
+    { label: 'YZOL Lubricants', href: '/brands/yzol-lubricants' },
+  ];
+
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Twitter, href: '#', label: 'Twitter' },
