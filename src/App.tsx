@@ -14,6 +14,7 @@ import GearBrakeOilsPage from "./pages/products/GearBrakeOilsPage";
 import GreasesPage from "./pages/products/GreasesPage";
 import HydraulicOilsPage from "./pages/products/HydraulicOilsPage";
 import CoolantsPage from "./pages/products/CoolantsPage";
+import YzolLubricantsPage from "./pages/brands/YzolLubricantsPage";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/products/greases" element={<GreasesPage />} />
           <Route path="/products/hydraulic-oils" element={<HydraulicOilsPage />} />
           <Route path="/products/coolants" element={<CoolantsPage />} />
+          <Route path="/brands/yzol-lubricants" element={<YzolLubricantsPage />} />
           <Route path="/why-us" element={<WhyUsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
