@@ -1,6 +1,8 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ProductCatalog from '@/components/products/ProductCatalog';
 import { Droplet, Award, ShieldCheck, Gauge } from 'lucide-react';
+import yzolBanner from '@/assets/yzol-banner.jpg';
 
 const YzolLubricantsPage = () => {
   const highlights = [
@@ -13,24 +15,34 @@ const YzolLubricantsPage = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
-        {/* Hero Section */}
-        <section className="py-16 lg:py-24 bg-gradient-to-b from-primary/5 to-background">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center gap-2 mb-4">
-              <Droplet className="h-6 w-6 text-accent" />
-              <span className="font-heading text-sm font-semibold text-accent uppercase tracking-wider">
-                Other Brands
-              </span>
+        {/* Hero Banner */}
+        <section className="relative overflow-hidden">
+          <img
+            src={yzolBanner}
+            alt="YZOL Lubricants premium product range"
+            width={1920}
+            height={768}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/40" />
+          <div className="relative container mx-auto px-4 py-20 lg:py-28">
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-2 mb-4">
+                <Droplet className="h-6 w-6 text-accent" />
+                <span className="font-heading text-sm font-semibold text-accent uppercase tracking-wider">
+                  Other Brands
+                </span>
+              </div>
+              <h1 className="section-title text-primary-foreground mb-6">
+                YZOL <span className="text-gradient">Lubricants</span>
+              </h1>
+              <p className="text-lg text-primary-foreground/85 max-w-2xl">
+                YZOL Lubricants is part of our extended portfolio of trusted brands, offering a
+                comprehensive range of high-performance lubricants for automotive and industrial
+                applications. Built on quality and reliability, YZOL delivers dependable protection
+                and performance across demanding conditions.
+              </p>
             </div>
-            <h1 className="section-title text-foreground mb-6">
-              YZOL <span className="text-gradient">Lubricants</span>
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl">
-              YZOL Lubricants is part of our extended portfolio of trusted brands, offering a
-              comprehensive range of high-performance lubricants for automotive and industrial
-              applications. Built on quality and reliability, YZOL delivers dependable protection
-              and performance across demanding conditions.
-            </p>
           </div>
         </section>
 
@@ -69,6 +81,18 @@ const YzolLubricantsPage = () => {
             </p>
           </div>
         </section>
+
+        {/* Product Lineup */}
+        <div className="bg-background">
+          <div className="container mx-auto px-4 pt-8">
+            <h2 className="section-title text-center text-foreground">Product Lineup</h2>
+          </div>
+          <ProductCatalog category="engine-oils" title="Engine Oils" />
+          <ProductCatalog category="gear-brake-oils" title="Gear & Brake Oils" />
+          <ProductCatalog category="greases" title="Greases" />
+          <ProductCatalog category="hydraulic-oils" title="Hydraulic Oils" />
+          <ProductCatalog category="coolants" title="Coolants" />
+        </div>
       </main>
       <Footer />
     </div>
