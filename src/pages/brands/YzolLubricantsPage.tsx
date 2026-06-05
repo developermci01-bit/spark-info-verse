@@ -4,6 +4,7 @@ import ProductCatalog from '@/components/products/ProductCatalog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Droplet, Award, ShieldCheck, Gauge, Shield, Globe, Factory, Sparkles } from 'lucide-react';
 import yzolBanner from '@/assets/yzol-banner.jpg';
+import yzolLogo from '@/assets/yzol-logo.png.asset.json';
 
 const categories = [
   { value: 'engine-oils', label: 'Engine Oils', title: 'Engine Oils' },
@@ -41,6 +42,9 @@ const YzolLubricantsPage = () => {
                 <span className="font-heading text-sm font-semibold text-accent uppercase tracking-wider">
                   Other Brands
                 </span>
+              </div>
+              <div className="inline-block bg-white rounded-xl p-4 mb-6 shadow-lg">
+                <img src={yzolLogo.url} alt="YZOL Lubricants logo" className="h-20 md:h-24 w-auto" />
               </div>
               <h1 className="section-title text-primary-foreground mb-6">
                 YZOL <span className="text-gradient">Lubricants</span>
