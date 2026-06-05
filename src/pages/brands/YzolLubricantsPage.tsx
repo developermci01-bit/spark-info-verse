@@ -152,20 +152,35 @@ const YzolLubricantsPage = () => {
         </section>
 
         {/* Product Lineup */}
-        <section className="py-12 lg:py-16 bg-background">
-          <div className="container mx-auto px-4">
-            <h2 className="section-title text-center text-foreground mb-3">Product Lineup</h2>
-            <p className="text-center text-muted-foreground mb-8">
-              Browse the YZOL range by category.
-            </p>
+        <section className="relative overflow-hidden py-20 lg:py-28">
+          <div className="absolute inset-0 dark-gradient" />
+          <div className="absolute -top-20 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
+
+          <div className="relative container mx-auto px-4">
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <div className="h-1 w-8 bg-accent rounded-full" />
+                <span className="font-heading text-sm font-semibold text-accent uppercase tracking-wider">
+                  Product Range
+                </span>
+                <div className="h-1 w-8 bg-accent rounded-full" />
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-primary-foreground mb-3">
+                Product <span className="text-gradient">Lineup</span>
+              </h2>
+              <p className="text-primary-foreground/60 max-w-xl mx-auto">
+                Browse the YZOL range by category. Every product is manufactured to deliver dependable protection and performance.
+              </p>
+            </div>
 
             <Tabs defaultValue="engine-oils" className="w-full">
-              <TabsList className="flex flex-wrap h-auto justify-center gap-2 bg-secondary p-2 rounded-xl mb-6">
+              <TabsList className="flex flex-wrap h-auto justify-center gap-3 bg-transparent p-0 mb-8">
                 {categories.map((c) => (
                   <TabsTrigger
                     key={c.value}
                     value={c.value}
-                    className="font-heading text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-lg px-4 py-2"
+                    className="font-heading text-sm rounded-xl px-5 py-2.5 border border-primary-foreground/10 bg-primary-foreground/5 text-primary-foreground/80 backdrop-blur-sm hover:bg-primary-foreground/10 hover:border-accent/30 transition-all duration-300 data-[state=active]:bg-accent data-[state=active]:text-accent-foreground data-[state=active]:border-accent data-[state=active]:shadow-lg"
                   >
                     {c.label}
                   </TabsTrigger>
@@ -174,7 +189,7 @@ const YzolLubricantsPage = () => {
 
               {categories.map((c) => (
                 <TabsContent key={c.value} value={c.value} className="mt-0">
-                  <div className="[&_section]:py-0 [&_h2.section-title]:hidden">
+                  <div className="dark [&_section]:py-0 [&_h2.section-title]:hidden">
                     <ProductCatalog category={c.value} title={c.title} />
                   </div>
                 </TabsContent>
