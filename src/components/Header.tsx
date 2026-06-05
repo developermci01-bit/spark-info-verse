@@ -224,6 +224,35 @@ const Header = () => {
                 )}
               </div>
 
+              {/* Mobile Other Brands Accordion */}
+              <div>
+                <button
+                  onClick={() => setIsMobileBrandsOpen(!isMobileBrandsOpen)}
+                  className={`font-heading font-medium transition-colors py-2 flex items-center justify-between w-full ${
+                    isBrandsActive()
+                      ? 'text-accent'
+                      : 'text-foreground hover:text-accent'
+                  }`}
+                >
+                  Other Brands
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isMobileBrandsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isMobileBrandsOpen && (
+                  <div className="pl-4 flex flex-col gap-2 mt-2">
+                    {otherBrands.map((brand) => (
+                      <Link
+                        key={brand.href}
+                        to={brand.href}
+                        className="font-heading text-sm text-muted-foreground hover:text-accent py-1"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {brand.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <Link
                 to="/why-us"
                 className={`font-heading font-medium transition-colors py-2 ${
