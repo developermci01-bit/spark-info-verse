@@ -1,8 +1,17 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCatalog from '@/components/products/ProductCatalog';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Droplet, Award, ShieldCheck, Gauge } from 'lucide-react';
 import yzolBanner from '@/assets/yzol-banner.jpg';
+
+const categories = [
+  { value: 'engine-oils', label: 'Engine Oils', title: 'Engine Oils' },
+  { value: 'gear-brake-oils', label: 'Gear & Brake', title: 'Gear & Brake Oils' },
+  { value: 'greases', label: 'Greases', title: 'Greases' },
+  { value: 'hydraulic-oils', label: 'Hydraulic', title: 'Hydraulic Oils' },
+  { value: 'coolants', label: 'Coolants', title: 'Coolants' },
+] as const;
 
 const YzolLubricantsPage = () => {
   const highlights = [
@@ -83,16 +92,36 @@ const YzolLubricantsPage = () => {
         </section>
 
         {/* Product Lineup */}
-        <div className="bg-background">
-          <div className="container mx-auto px-4 pt-8">
-            <h2 className="section-title text-center text-foreground">Product Lineup</h2>
+        <section className="py-12 lg:py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <h2 className="section-title text-center text-foreground mb-3">Product Lineup</h2>
+            <p className="text-center text-muted-foreground mb-8">
+              Browse the YZOL range by category.
+            </p>
+
+            <Tabs defaultValue="engine-oils" className="w-full">
+              <TabsList className="flex flex-wrap h-auto justify-center gap-2 bg-secondary p-2 rounded-xl mb-6">
+                {categories.map((c) => (
+                  <TabsTrigger
+                    key={c.value}
+                    value={c.value}
+                    className="font-heading text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-lg px-4 py-2"
+                  >
+                    {c.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+
+              {categories.map((c) => (
+                <TabsContent key={c.value} value={c.value} className="mt-0">
+                  <div className="[&_section]:py-0 [&_h2.section-title]:hidden">
+                    <ProductCatalog category={c.value} title={c.title} />
+                  </div>
+                </TabsContent>
+              ))}
+            </Tabs>
           </div>
-          <ProductCatalog category="engine-oils" title="Engine Oils" />
-          <ProductCatalog category="gear-brake-oils" title="Gear & Brake Oils" />
-          <ProductCatalog category="greases" title="Greases" />
-          <ProductCatalog category="hydraulic-oils" title="Hydraulic Oils" />
-          <ProductCatalog category="coolants" title="Coolants" />
-        </div>
+        </section>
       </main>
       <Footer />
     </div>
