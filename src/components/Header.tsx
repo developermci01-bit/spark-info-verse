@@ -15,7 +15,7 @@ const Header = () => {
     { label: 'Gear & Brake Oils', href: '/products/gear-brake-oils' },
     { label: 'Greases', href: '/products/greases' },
     { label: 'Hydraulic Oils', href: '/products/hydraulic-oils' },
-    { label: 'Coolants', href: '/products/coolants' },
+    { label: 'Coolants & DEF/AdBlue', href: '/products/coolants' },
   ];
 
   const otherBrands = [

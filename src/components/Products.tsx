@@ -40,12 +40,12 @@ const Products = () => {
       features: ['Excellent anti-wear', 'Thermal stability', 'Efficient power transfer'],
     },
     {
-      name: 'Coolants',
-      description: 'Advanced coolant formulations that prevent overheating and corrosion, ensuring optimal engine temperature control.',
+      name: 'Coolants & DEF/AdBlue',
+      description: 'Advanced coolant and DEF/AdBlue solutions for engine temperature control and emissions compliance in modern diesel vehicles.',
       icon: Snowflake,
       image: productActive,
       href: '/products/coolants',
-      features: ['Anti-freeze protection', 'Corrosion inhibitors', 'Year-round protection'],
+      features: ['Anti-freeze protection', 'Emissions compliance', 'Year-round protection'],
     },
   ];
 

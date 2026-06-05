@@ -10,7 +10,7 @@ const categories = [
   { value: 'gear-brake-oils', label: 'Gear & Brake', title: 'Gear & Brake Oils' },
   { value: 'greases', label: 'Greases', title: 'Greases' },
   { value: 'hydraulic-oils', label: 'Hydraulic', title: 'Hydraulic Oils' },
-  { value: 'coolants', label: 'Coolants', title: 'Coolants' },
+  { value: 'coolants', label: 'Coolants & DEF', title: 'Coolants & DEF/AdBlue' },
 ] as const;
 
 const YzolLubricantsPage = () => {
