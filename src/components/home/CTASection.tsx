@@ -46,11 +46,11 @@ const CTASection = () => {
           {/* Contact Info */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a 
-              href="tel:+919876543210" 
+              href="tel:+918130324944" 
               className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors"
             >
               <Phone className="h-5 w-5" />
-              <span>+91 98765 43210</span>
+              <span>+91 8130324944</span>
             </a>
             <div className="hidden sm:block w-px h-6 bg-primary-foreground/30" />
             <a 

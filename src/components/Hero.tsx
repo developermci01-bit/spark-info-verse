@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import heroBg from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
@@ -36,10 +36,6 @@ const Hero = () => {
             <Button variant="hero" size="xl">
               Explore Products
               <ArrowRight className="h-5 w-5" />
-            </Button>
-            <Button variant="heroOutline" size="xl">
-              <Play className="h-5 w-5" />
-              Watch Video
             </Button>
           </div>
 
