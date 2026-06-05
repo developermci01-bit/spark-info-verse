@@ -97,6 +97,27 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            {/* Other Brands Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`font-heading font-medium text-sm transition-colors duration-300 flex items-center gap-1 outline-none ${
+                isBrandsActive()
+                  ? 'text-accent'
+                  : 'text-foreground hover:text-accent'
+              }`}>
+                Other Brands
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-background border border-border shadow-lg z-50 min-w-[200px]">
+                {otherBrands.map((brand) => (
+                  <DropdownMenuItem key={brand.href} asChild>
+                    <Link to={brand.href} className="w-full cursor-pointer font-heading text-sm">
+                      {brand.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Link
               to="/why-us"
               className={`font-heading font-medium text-sm transition-colors duration-300 ${
