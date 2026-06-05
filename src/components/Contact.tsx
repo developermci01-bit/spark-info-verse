@@ -155,7 +155,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all"
-                    placeholder="+91 9876543210"
+                    placeholder="+91 8130324944"
                   />
                 </div>
                 <div>

@@ -65,18 +65,24 @@ const WhyUsPreview = () => {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="group relative bg-card rounded-2xl p-6 card-shadow hover:card-shadow-hover transition-all duration-300 border border-border hover:-translate-y-1"
+              className="group relative bg-card rounded-2xl p-6 card-shadow hover:card-shadow-hover transition-all duration-500 border border-border hover:border-accent/40 hover:-translate-y-2 overflow-hidden"
             >
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-accent/10 group-hover:bg-accent/20 transition-colors flex-shrink-0">
+              {/* Top gradient bar */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              {/* Decorative blob */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative flex items-start gap-4">
+                <div className="p-4 rounded-2xl bg-gradient-to-br from-accent/15 to-primary/10 ring-1 ring-border group-hover:ring-accent/50 group-hover:scale-110 transition-all duration-500 flex-shrink-0">
                   <reason.icon className="h-6 w-6 text-accent" />
                 </div>
-                
+
                 <div>
-                  <h3 className="font-heading text-lg font-bold text-foreground mb-2">
+                  <h3 className="font-heading text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {reason.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {reason.description}
                   </p>
                 </div>

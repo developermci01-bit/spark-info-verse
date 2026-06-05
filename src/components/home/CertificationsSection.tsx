@@ -4,22 +4,34 @@ const certifications = [
   {
     icon: Shield,
     title: "ISO 9001:2015",
-    description: "Quality Management System certified for consistent product excellence"
+    description: "Quality Management System certified for consistent product excellence",
+    cardBg: "bg-primary/5",
+    iconBg: "bg-primary/10 group-hover:bg-primary/20",
+    iconColor: "text-primary",
   },
   {
     icon: Award,
     title: "API Certified",
-    description: "American Petroleum Institute certified lubricants"
+    description: "American Petroleum Institute certified lubricants",
+    cardBg: "bg-accent/5",
+    iconBg: "bg-accent/10 group-hover:bg-accent/20",
+    iconColor: "text-accent",
   },
   {
     icon: Leaf,
     title: "Eco-Friendly",
-    description: "Committed to sustainable manufacturing practices"
+    description: "Committed to sustainable manufacturing practices",
+    cardBg: "bg-primary/10",
+    iconBg: "bg-primary/15 group-hover:bg-primary/25",
+    iconColor: "text-primary",
   },
   {
     icon: CheckCircle2,
     title: "BIS Approved",
-    description: "Bureau of Indian Standards approved products"
+    description: "Bureau of Indian Standards approved products",
+    cardBg: "bg-accent/10",
+    iconBg: "bg-accent/15 group-hover:bg-accent/25",
+    iconColor: "text-accent",
   }
 ];
 
@@ -75,10 +87,10 @@ const CertificationsSection = () => {
             {certifications.map((cert, index) => (
               <div 
                 key={index}
-                className="bg-card border border-border rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+                className={`${cert.cardBg} border border-border rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group`}
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                  <cert.icon className="h-8 w-8 text-primary" />
+                <div className={`w-16 h-16 ${cert.iconBg} rounded-full flex items-center justify-center mx-auto mb-4 transition-colors`}>
+                  <cert.icon className={`h-8 w-8 ${cert.iconColor}`} />
                 </div>
                 <h3 className="font-bold text-foreground mb-2">{cert.title}</h3>
                 <p className="text-sm text-muted-foreground">{cert.description}</p>
