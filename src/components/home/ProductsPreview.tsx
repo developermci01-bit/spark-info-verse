@@ -10,7 +10,7 @@ const ProductsPreview = () => {
     { icon: Settings, name: 'Gear & Brake Oils', count: '8+ Products', href: '/products/gear-brake-oils' },
     { icon: Circle, name: 'Greases', count: '10+ Products', href: '/products/greases' },
     { icon: Droplet, name: 'Hydraulic Oils', count: '6+ Products', href: '/products/hydraulic-oils' },
-    { icon: Snowflake, name: 'Coolants', count: '6+ Products', href: '/products/coolants' },
+    { icon: Snowflake, name: 'Coolants & DEF/AdBlue', count: '6+ Products', href: '/products/coolants' },
   ];
 
   return (

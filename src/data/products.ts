@@ -68,7 +68,7 @@ export const products: Product[] = [
   // ===== Coolants =====
   { category: 'coolants', subCategory: 'Coolant', grade: 'Coolant', application: 'Engine cooling systems', packs: ['1 L'] },
   { category: 'coolants', subCategory: 'Coolant', grade: 'Coolant Extra Cool', application: 'High-performance cooling', packs: ['1 L'] },
-  { category: 'coolants', subCategory: 'DEF / AD Blue', grade: 'AD Blue (DEF)', application: 'Diesel exhaust fluid for SCR systems', packs: ['10 L', '20 L', '210 L'] },
+  { category: 'coolants', subCategory: 'DEF / AdBlue', grade: 'AdBlue (DEF)', application: 'Diesel exhaust fluid for SCR emission control systems', packs: ['10 L', '20 L', '210 L'] },
 ];
 
 export const getProductsByCategory = (category: ProductCategory): Product[] =>
