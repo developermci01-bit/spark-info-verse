@@ -44,7 +44,7 @@ const GreasesPage = () => {
               </div>
               <div className="relative animate-fade-in">
                 <div className="absolute -inset-4 bg-accent/20 blur-3xl rounded-full" />
-                <img src={heroImg} alt="Industrial greases" width={1280} height={960} className="relative rounded-2xl border border-border shadow-2xl w-full h-auto object-cover" />
+                <img src={heroImg} alt="Industrial greases" width={1280} height={960} className="relative rounded-2xl border border-border shadow-2xl w-full h-auto max-h-[400px] object-cover" />
               </div>
             </div>
           </div>
