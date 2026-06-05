@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCatalog from '@/components/products/ProductCatalog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Droplet, Award, ShieldCheck, Gauge } from 'lucide-react';
+import { Droplet, Award, ShieldCheck, Gauge, Shield, Globe, Factory, Sparkles } from 'lucide-react';
 import yzolBanner from '@/assets/yzol-banner.jpg';
 
 const categories = [
@@ -74,20 +74,80 @@ const YzolLubricantsPage = () => {
           </div>
         </section>
 
-        {/* Info Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="section-title text-foreground mb-6">About YZOL Lubricants</h2>
-            <p className="text-muted-foreground mb-4">
-              YZOL Lubricants offers a versatile selection of engine oils, gear oils, greases, and
-              specialty lubricants designed to meet the needs of modern vehicles and machinery.
-              Each product is manufactured under strict quality controls to ensure consistent
-              performance and protection.
-            </p>
-            <p className="text-muted-foreground">
-              For product details, availability, and distributorship opportunities for the YZOL
-              brand, please reach out to our team through the contact page.
-            </p>
+        {/* About Section */}
+        <section className="relative overflow-hidden py-20 lg:py-28">
+          <div className="absolute inset-0 dark-gradient" />
+          {/* Decorative accent glow */}
+          <div className="absolute -top-20 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
+
+          <div className="relative container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left: Text Content */}
+              <div className="animate-slide-up">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="h-1 w-8 bg-accent rounded-full" />
+                  <span className="font-heading text-sm font-semibold text-accent uppercase tracking-wider">
+                    About The Brand
+                  </span>
+                </div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-primary-foreground mb-6 leading-tight">
+                  Engineered for <span className="text-gradient">Performance</span>
+                </h2>
+                <p className="text-primary-foreground/75 text-lg leading-relaxed mb-4">
+                  YZOL Lubricants offers a versatile selection of engine oils, gear oils, greases, and
+                  specialty lubricants designed to meet the needs of modern vehicles and machinery.
+                  Each product is manufactured under strict quality controls to ensure consistent
+                  performance and protection.
+                </p>
+                <p className="text-primary-foreground/60 leading-relaxed">
+                  For product details, availability, and distributorship opportunities for the YZOL
+                  brand, please reach out to our team through the contact page.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-heading font-medium">
+                    <Shield className="h-4 w-4" />
+                    Quality Assured
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/5 border border-primary-foreground/10 text-primary-foreground/80 text-sm font-heading font-medium">
+                    <Globe className="h-4 w-4" />
+                    Global Standards
+                  </span>
+                </div>
+              </div>
+
+              {/* Right: Feature Grid */}
+              <div className="grid grid-cols-2 gap-4 animate-fade-in">
+                <div className="group p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 backdrop-blur-sm hover:bg-primary-foreground/10 hover:border-accent/30 transition-all duration-300">
+                  <div className="p-3 rounded-xl bg-accent/10 w-fit mb-4 group-hover:bg-accent/20 transition-colors">
+                    <Factory className="h-6 w-6 text-accent" />
+                  </div>
+                  <h3 className="font-heading font-bold text-primary-foreground mb-2">Industrial Grade</h3>
+                  <p className="text-sm text-primary-foreground/60">Built for demanding commercial and industrial environments.</p>
+                </div>
+                <div className="group p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 backdrop-blur-sm hover:bg-primary-foreground/10 hover:border-accent/30 transition-all duration-300 mt-6">
+                  <div className="p-3 rounded-xl bg-accent/10 w-fit mb-4 group-hover:bg-accent/20 transition-colors">
+                    <Sparkles className="h-6 w-6 text-accent" />
+                  </div>
+                  <h3 className="font-heading font-bold text-primary-foreground mb-2">Advanced Formulation</h3>
+                  <p className="text-sm text-primary-foreground/60">Cutting-edge chemistry for maximum engine efficiency.</p>
+                </div>
+                <div className="group p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 backdrop-blur-sm hover:bg-primary-foreground/10 hover:border-accent/30 transition-all duration-300">
+                  <div className="p-3 rounded-xl bg-accent/10 w-fit mb-4 group-hover:bg-accent/20 transition-colors">
+                    <ShieldCheck className="h-6 w-6 text-accent" />
+                  </div>
+                  <h3 className="font-heading font-bold text-primary-foreground mb-2">Tested & Proven</h3>
+                  <p className="text-sm text-primary-foreground/60">Rigorously validated under extreme operating conditions.</p>
+                </div>
+                <div className="group p-6 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 backdrop-blur-sm hover:bg-primary-foreground/10 hover:border-accent/30 transition-all duration-300 mt-6">
+                  <div className="p-3 rounded-xl bg-accent/10 w-fit mb-4 group-hover:bg-accent/20 transition-colors">
+                    <Gauge className="h-6 w-6 text-accent" />
+                  </div>
+                  <h3 className="font-heading font-bold text-primary-foreground mb-2">Optimized Range</h3>
+                  <p className="text-sm text-primary-foreground/60">Complete coverage from engines to hydraulics.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
