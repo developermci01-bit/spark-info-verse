@@ -1,8 +1,17 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCatalog from '@/components/products/ProductCatalog';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Droplet, Award, ShieldCheck, Gauge } from 'lucide-react';
 import yzolBanner from '@/assets/yzol-banner.jpg';
+
+const categories = [
+  { value: 'engine-oils', label: 'Engine Oils', title: 'Engine Oils' },
+  { value: 'gear-brake-oils', label: 'Gear & Brake', title: 'Gear & Brake Oils' },
+  { value: 'greases', label: 'Greases', title: 'Greases' },
+  { value: 'hydraulic-oils', label: 'Hydraulic', title: 'Hydraulic Oils' },
+  { value: 'coolants', label: 'Coolants', title: 'Coolants' },
+] as const;
 
 const YzolLubricantsPage = () => {
   const highlights = [
