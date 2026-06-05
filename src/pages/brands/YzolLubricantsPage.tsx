@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCatalog from '@/components/products/ProductCatalog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Droplet, Award, ShieldCheck, Gauge } from 'lucide-react';
+import { Droplet, Award, ShieldCheck, Gauge, Shield, Globe, Factory, Sparkles } from 'lucide-react';
 import yzolBanner from '@/assets/yzol-banner.jpg';
 
 const categories = [
