@@ -22,6 +22,10 @@ const Footer = () => {
     { label: 'Coolants', href: '/products/coolants' },
   ];
 
+  const otherBrands = [
+    { label: 'YZOL Lubricants', href: '/brands/yzol-lubricants' },
+  ];
+
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Twitter, href: '#', label: 'Twitter' },
@@ -97,6 +101,19 @@ const Footer = () => {
                     className="text-primary-foreground/70 hover:text-accent transition-colors"
                   >
                     {product.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h4 className="font-heading font-bold text-lg mb-6 mt-8">Other Brands</h4>
+            <ul className="space-y-3">
+              {otherBrands.map((brand, index) => (
+                <li key={index}>
+                  <Link
+                    to={brand.href}
+                    className="text-primary-foreground/70 hover:text-accent transition-colors"
+                  >
+                    {brand.label}
                   </Link>
                 </li>
               ))}

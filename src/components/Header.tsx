@@ -13,6 +13,7 @@ import logo from '@/assets/logo.png';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
+  const [isMobileBrandsOpen, setIsMobileBrandsOpen] = useState(false);
   const location = useLocation();
 
   const productCategories = [
@@ -21,6 +22,10 @@ const Header = () => {
     { label: 'Greases', href: '/products/greases' },
     { label: 'Hydraulic Oils', href: '/products/hydraulic-oils' },
     { label: 'Coolants', href: '/products/coolants' },
+  ];
+
+  const otherBrands = [
+    { label: 'YZOL Lubricants', href: '/brands/yzol-lubricants' },
   ];
 
   const navLinks = [
@@ -32,6 +37,7 @@ const Header = () => {
 
   const isActive = (href: string) => location.pathname === href;
   const isProductsActive = () => location.pathname.startsWith('/products');
+  const isBrandsActive = () => location.pathname.startsWith('/brands');
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -85,6 +91,27 @@ const Header = () => {
                   <DropdownMenuItem key={category.href} asChild>
                     <Link to={category.href} className="w-full cursor-pointer font-heading text-sm">
                       {category.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Other Brands Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`font-heading font-medium text-sm transition-colors duration-300 flex items-center gap-1 outline-none ${
+                isBrandsActive()
+                  ? 'text-accent'
+                  : 'text-foreground hover:text-accent'
+              }`}>
+                Other Brands
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-background border border-border shadow-lg z-50 min-w-[200px]">
+                {otherBrands.map((brand) => (
+                  <DropdownMenuItem key={brand.href} asChild>
+                    <Link to={brand.href} className="w-full cursor-pointer font-heading text-sm">
+                      {brand.label}
                     </Link>
                   </DropdownMenuItem>
                 ))}
@@ -191,6 +218,35 @@ const Header = () => {
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {category.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile Other Brands Accordion */}
+              <div>
+                <button
+                  onClick={() => setIsMobileBrandsOpen(!isMobileBrandsOpen)}
+                  className={`font-heading font-medium transition-colors py-2 flex items-center justify-between w-full ${
+                    isBrandsActive()
+                      ? 'text-accent'
+                      : 'text-foreground hover:text-accent'
+                  }`}
+                >
+                  Other Brands
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isMobileBrandsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isMobileBrandsOpen && (
+                  <div className="pl-4 flex flex-col gap-2 mt-2">
+                    {otherBrands.map((brand) => (
+                      <Link
+                        key={brand.href}
+                        to={brand.href}
+                        className="font-heading text-sm text-muted-foreground hover:text-accent py-1"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {brand.label}
                       </Link>
                     ))}
                   </div>
