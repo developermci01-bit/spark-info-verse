@@ -15,6 +15,7 @@ import GreasesPage from "./pages/products/GreasesPage";
 import HydraulicOilsPage from "./pages/products/HydraulicOilsPage";
 import CoolantsPage from "./pages/products/CoolantsPage";
 import YzolLubricantsPage from "./pages/brands/YzolLubricantsPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
