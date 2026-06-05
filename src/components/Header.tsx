@@ -41,7 +41,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-2">
+          <nav className="hidden xl:flex items-center gap-2">
             <Link to="/" className={`${linkBase} px-3 ${isActive('/') ? linkActive : linkIdle}`}>
               Home
             </Link>
@@ -114,7 +114,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Button variant="accent" size="lg" asChild className="shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <Link to="/contact">Get Distributorship</Link>
             </Button>
@@ -122,7 +122,7 @@ const Header = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden p-2"
+            className="xl:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -132,7 +132,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-slide-up">
+          <div className="xl:hidden py-4 border-t border-border animate-slide-up">
             <nav className="flex flex-col gap-2">
               <Link to="/" className={`font-heading font-medium py-2 ${isActive('/') ? 'text-accent' : 'text-foreground hover:text-accent'}`} onClick={() => setIsMenuOpen(false)}>Home</Link>
               <Link to="/about" className={`font-heading font-medium py-2 ${isActive('/about') ? 'text-accent' : 'text-foreground hover:text-accent'}`} onClick={() => setIsMenuOpen(false)}>About</Link>
