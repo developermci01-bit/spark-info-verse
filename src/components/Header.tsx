@@ -13,6 +13,7 @@ import logo from '@/assets/logo.png';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
+  const [isMobileBrandsOpen, setIsMobileBrandsOpen] = useState(false);
   const location = useLocation();
 
   const productCategories = [
@@ -21,6 +22,10 @@ const Header = () => {
     { label: 'Greases', href: '/products/greases' },
     { label: 'Hydraulic Oils', href: '/products/hydraulic-oils' },
     { label: 'Coolants', href: '/products/coolants' },
+  ];
+
+  const otherBrands = [
+    { label: 'YZOL Lubricants', href: '/brands/yzol-lubricants' },
   ];
 
   const navLinks = [
@@ -32,6 +37,7 @@ const Header = () => {
 
   const isActive = (href: string) => location.pathname === href;
   const isProductsActive = () => location.pathname.startsWith('/products');
+  const isBrandsActive = () => location.pathname.startsWith('/brands');
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
