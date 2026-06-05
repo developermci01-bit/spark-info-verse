@@ -171,12 +171,12 @@ const Contact = () => {
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all"
                   >
                     <option value="">Select a subject</option>
-                    <option value="yzol-lubricants">Enquiry for Yzol Lubricants</option>
                     <option value="distributorship">Distributorship Inquiry</option>
                     <option value="products">Product Information</option>
                     <option value="partnership">Business Partnership</option>
                     <option value="support">Customer Support</option>
                     <option value="other">Other</option>
+                    <option value="yzol-lubricants">Enquiry for Yzol Lubricants</option>
                   </select>
                 </div>
               </div>
