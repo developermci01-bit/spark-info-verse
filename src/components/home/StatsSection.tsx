@@ -5,7 +5,7 @@ const StatsSection = () => {
     { value: 10, suffix: "+", label: "Years of Excellence" },
     { value: 18, suffix: "+", label: "States in India" },
     { value: 6, suffix: "+", label: "Export Countries" },
-    { value: 1, suffix: " L Ltr", label: "Daily Production" },
+    { value: 1, suffix: "L Ltr", label: "Daily Production" },
   ];
 
   return (
