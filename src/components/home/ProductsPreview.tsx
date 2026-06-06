@@ -59,25 +59,17 @@ const ProductsPreview = () => {
         <div className="bg-card rounded-3xl p-8 md:p-12 border border-border card-shadow">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Products Display */}
-            <div className="flex justify-center items-end gap-4">
+            <div className="flex justify-center items-center">
               <div className="relative group">
-                <div className="absolute inset-0 bg-accent/20 rounded-full blur-2xl group-hover:bg-accent/30 transition-colors" />
+                <div className="absolute inset-0 bg-accent/20 rounded-full blur-3xl group-hover:bg-accent/30 transition-colors" />
                 <img
-                  src={productAdvantage}
-                  alt="Advantage+ Engine Oil"
-                  className="relative h-48 md:h-64 object-contain animate-float"
-                />
-              </div>
-              <div className="relative group">
-                <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-colors" />
-                <img
-                  src={productActive}
-                  alt="Active+ Engine Oil"
-                  className="relative h-56 md:h-72 object-contain animate-float"
-                  style={{ animationDelay: '0.5s' }}
+                  src={allProductsAsset.url}
+                  alt="Wieser Petroleum product range"
+                  className="relative h-72 md:h-96 object-contain animate-float"
                 />
               </div>
             </div>
+
 
             {/* Content */}
             <div className="text-center lg:text-left">
