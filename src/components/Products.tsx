@@ -4,6 +4,8 @@ import { ArrowRight, Fuel, Settings, Snowflake, Circle, Droplet } from 'lucide-r
 import productAdvantage from '@/assets/product-advantage.png';
 import productActive from '@/assets/product-active.png';
 import productGear from '@/assets/product-gear.png';
+import advantageGreyAsset from '@/assets/advantage-grey.png.asset.json';
+import adblueDefAsset from '@/assets/adblue-def.png.asset.json';
 
 const Products = () => {
   const products = [
