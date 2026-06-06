@@ -1,8 +1,7 @@
 import { ArrowRight, Fuel, Settings, Snowflake, Circle, Droplet } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import productAdvantage from '@/assets/product-advantage.png';
-import productActive from '@/assets/product-active.png';
+import allProductsAsset from '@/assets/all-products.png.asset.json';
 
 const ProductsPreview = () => {
   const categories = [
