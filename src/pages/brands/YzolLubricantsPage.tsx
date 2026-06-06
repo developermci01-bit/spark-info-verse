@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import ProductCatalog from '@/components/products/ProductCatalog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Droplet, Award, ShieldCheck, Gauge, Shield, Globe, Factory, Sparkles } from 'lucide-react';
-import yzolBanner from '@/assets/yzol-banner.jpg';
+import yzolBanner from '@/assets/yzol-banner.png.asset.json';
 import yzolLogo from '@/assets/yzol-logo.png.asset.json';
 
 const categories = [
