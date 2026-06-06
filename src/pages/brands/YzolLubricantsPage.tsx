@@ -28,7 +28,7 @@ const YzolLubricantsPage = () => {
         {/* Hero Banner */}
         <section className="relative overflow-hidden">
           <img
-            src={yzolBanner}
+            src={yzolBanner.url}
             alt="YZOL Lubricants premium product range"
             width={1920}
             height={768}
