@@ -165,8 +165,11 @@ const Products = () => {
                   <p className="text-primary-foreground/60 text-sm">
                     {product.type}
                   </p>
+                  <p className="text-primary-foreground/50 text-xs mt-2">
+                    {product.specs}
+                  </p>
                   <Button variant="accent" size="sm" className="mt-4" asChild>
-                    <Link to="/products/engine-oils">View Details</Link>
+                    <Link to={product.href}>View Details</Link>
                   </Button>
                 </div>
               </div>
