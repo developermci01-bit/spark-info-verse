@@ -4,6 +4,8 @@ import { ArrowRight, Fuel, Settings, Snowflake, Circle, Droplet } from 'lucide-r
 import productAdvantage from '@/assets/product-advantage.png';
 import productActive from '@/assets/product-active.png';
 import productGear from '@/assets/product-gear.png';
+import advantageGreyAsset from '@/assets/advantage-grey.png.asset.json';
+import adblueDefAsset from '@/assets/adblue-def.png.asset.json';
 
 const Products = () => {
   const products = [
@@ -50,8 +52,24 @@ const Products = () => {
   ];
 
   const featuredProducts = [
-    { name: 'Advantage+', tagline: 'Feel Its Power', grade: '20W-40', type: 'Motorcycle Engine Oil', image: productAdvantage },
-    { name: 'Active+', tagline: 'Feel Its Power', grade: '20W-40 4T', type: 'Motorcycle Engine Oil', image: productActive },
+    {
+      name: 'Advantage+',
+      tagline: 'Feel Its Power',
+      grade: '20W40 4T',
+      type: '4-Stroke Engine Oil',
+      specs: 'API-SN • JASO MA-2 • 100% Syn Technology',
+      image: advantageGreyAsset.url,
+      href: '/products/engine-oils',
+    },
+    {
+      name: 'AdBlue®',
+      tagline: 'BS6 Engine Protection',
+      grade: 'DEF / AdBlue®',
+      type: 'Diesel Exhaust Fluid',
+      specs: 'ISO 22241 • Pure & Reliable',
+      image: adblueDefAsset.url,
+      href: '/products/coolants',
+    },
   ];
 
   return (
@@ -147,8 +165,11 @@ const Products = () => {
                   <p className="text-primary-foreground/60 text-sm">
                     {product.type}
                   </p>
+                  <p className="text-primary-foreground/50 text-xs mt-2">
+                    {product.specs}
+                  </p>
                   <Button variant="accent" size="sm" className="mt-4" asChild>
-                    <Link to="/products/engine-oils">View Details</Link>
+                    <Link to={product.href}>View Details</Link>
                   </Button>
                 </div>
               </div>
