@@ -40,7 +40,7 @@ const EngineOilsPage = () => {
                   <span className="text-gradient">Maximum Performance</span>
                 </h1>
                 <p className="text-lg text-muted-foreground">
-                  Our range of engine oils features the revolutionary DOUBLEGRIP technology, providing 50% better protection during warm-up and restart. Suitable for motorcycles, cars, trucks, and commercial vehicles.
+                  Our range of engine oils features the revolutionary MICRO MOLECULE technology, providing 50% better protection during warm-up and restart. Suitable for motorcycles, cars, trucks, and commercial vehicles.
                 </p>
               </div>
               <div className="relative animate-fade-in">

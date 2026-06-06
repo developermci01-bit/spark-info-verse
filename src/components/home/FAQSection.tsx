@@ -7,8 +7,8 @@ import {
 
 const faqs = [
   {
-    question: "What makes DOUBLEGRIP Technology unique?",
-    answer: "DOUBLEGRIP Technology is our proprietary formulation that provides superior adhesion to metal surfaces, creating a protective layer that lasts twice as long as conventional lubricants. This results in reduced wear, better fuel efficiency, and extended engine life."
+    question: "What makes MICRO MOLECULE Technology unique?",
+    answer: "MICRO MOLECULE Technology is our proprietary formulation that provides superior adhesion to metal surfaces, creating a protective layer that lasts twice as long as conventional lubricants. This results in reduced wear, better fuel efficiency, and extended engine life."
   },
   {
     question: "How can I become a distributor?",

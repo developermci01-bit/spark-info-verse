@@ -6,7 +6,7 @@ const WhyUsPreview = () => {
   const reasons = [
     {
       icon: Shield,
-      title: 'DOUBLEGRIP Technology',
+      title: 'MICRO MOLECULE Technology',
       description: '50% better protection against engine wear.',
     },
     {
