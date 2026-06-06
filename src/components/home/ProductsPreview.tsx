@@ -83,10 +83,10 @@ const ProductsPreview = () => {
             {/* Content */}
             <div className="text-center lg:text-left">
               <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
-                DOUBLEGRIP Technology
+                MICRO MOLECULE Technology
               </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Our proprietary DOUBLEGRIP formula provides <span className="text-accent font-semibold">50% better protection</span> against warm-up and re-start wear, ensuring your engine performs at its peak in all conditions.
+                Our proprietary MICRO MOLECULE formula provides <span className="text-accent font-semibold">50% better protection</span> against warm-up and re-start wear, ensuring your engine performs at its peak in all conditions.
               </p>
               
               <ul className="space-y-3 mb-8">

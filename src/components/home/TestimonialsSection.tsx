@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: "Rajesh Kumar",
     role: "Fleet Manager, TransIndia Logistics",
-    content: "Wieser Petroleum's engine oils have significantly reduced our maintenance costs. The DOUBLEGRIP technology truly delivers on its promise.",
+    content: "Wieser Petroleum's engine oils have significantly reduced our maintenance costs. The MICRO MOLECULE technology truly delivers on its promise.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80"
   },

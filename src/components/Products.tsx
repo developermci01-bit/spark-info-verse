@@ -9,7 +9,7 @@ const Products = () => {
   const products = [
     {
       name: 'Engine Oils',
-      description: 'Premium engine oils with DOUBLEGRIP technology for superior engine protection and performance in all driving conditions.',
+      description: 'Premium engine oils with MICRO MOLECULE technology for superior engine protection and performance in all driving conditions.',
       icon: Fuel,
       image: productAdvantage,
       href: '/products/engine-oils',
