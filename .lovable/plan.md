@@ -1,12 +1,12 @@
 ## Plan
 
-Use the uploaded YZOL logo on the YZOL Lubricants page only (the global header keeps the Wieser Petroleum logo on all other pages).
+Replace the two product images in the MICRO MOLECULE Technology section on the home page with a single image (the uploaded "all products" composite).
 
 ### Changes
-1. Upload `yzol logo (2).png` to Lovable Assets → `src/assets/yzol-logo.png.asset.json`.
-2. In `src/pages/brands/YzolLubricantsPage.tsx`:
-   - Import the YZOL logo asset.
-   - Display the YZOL logo prominently in the hero banner section (above the "YZOL Lubricants" title), sized appropriately (e.g. h-24/h-28) with a white/light backdrop so the red logo stays legible on the dark hero overlay.
-3. Header on this page remains the Wieser logo (no global header swap), preserving brand consistency across the site.
+1. Upload `all products.png` to Lovable Assets → `src/assets/all-products.png.asset.json`.
+2. In `src/components/home/ProductsPreview.tsx`:
+   - Remove the two existing product image blocks (Advantage+ and Active+) and their imports (`productAdvantage`, `productActive`).
+   - Replace with a single centered image using the new uploaded asset, keeping the soft glow backdrop and float animation, sized larger (e.g. h-72 md:h-96) to fill the column nicely.
+   - Keep the right-side content (heading, paragraph, bullets, CTA) unchanged.
 
-No other pages or files are affected.
+No other components or pages are affected.
