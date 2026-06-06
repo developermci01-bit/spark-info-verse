@@ -61,7 +61,7 @@ const ProductsPreview = () => {
             {/* Products Display */}
             <div className="flex justify-center items-center">
               <div className="relative group">
-                <div className="absolute inset-0 bg-accent/20 rounded-full blur-3xl group-hover:bg-accent/30 transition-colors" />
+                <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/30 transition-colors" />
                 <img
                   src={allProductsAsset.url}
                   alt="Wieser Petroleum product range"
