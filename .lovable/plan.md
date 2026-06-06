@@ -1,20 +1,19 @@
 ## Plan
 
-Update the "Featured Products" section in `src/components/Products.tsx` to showcase the two uploaded products.
+Replace the YZOL page hero banner with a new design that features the uploaded product lineup image instead of the current full-bleed background photo.
 
 ### Steps
 
-1. Upload both images to Lovable Assets:
-   - `/mnt/user-uploads/01_advantage_grey.png` → `src/assets/advantage-grey.png.asset.json`
-   - `/mnt/user-uploads/IMG-20260302-WA0000-removebg-preview.png` → `src/assets/adblue-def.png.asset.json`
+1. Upload the new image to Lovable Assets:
+   - `/mnt/user-uploads/yzol_multi_banner.png` → `src/assets/yzol-products-banner.png.asset.json`
 
-2. Edit `src/components/Products.tsx`:
-   - Replace the old `productAdvantage` / `productActive` imports used by `featuredProducts` with the two new asset pointers.
-   - Update the `featuredProducts` array to the two new entries:
-     - **Advantage+** — tagline "Feel Its Power", grade "20W40 4T", type "4-Stroke Engine Oil", specs "API-SN • JASO MA-2 • 100% Syn Technology", CTA → `/products/engine-oils`.
-     - **AdBlue® (DEF)** — tagline "BS6 Engine Protection", grade "DEF / AdBlue®", type "Diesel Exhaust Fluid", specs "ISO 22241 • Pure & Reliable", CTA → `/products/coolants`.
-   - Extend the card layout to render the extra spec line under the existing grade/type text (small muted tag row). No other layout changes.
+2. Edit `src/pages/brands/YzolLubricantsPage.tsx` hero section:
+   - Remove the `yzolBanner` background image and dark navy overlay.
+   - Rebuild the hero as a two-column layout on a navy gradient background:
+     - **Left column**: existing badge ("Other Brands"), white YZOL logo card, H1 heading, and intro paragraph (unchanged copy).
+     - **Right column**: the uploaded product lineup image, displayed on the navy hero with a soft blue glow behind it (matching the MICRO MOLECULE style — `bg-primary/20` blur).
+   - Stack to single column on mobile (image below text).
+   - Keep the `yzolBanner` import removable if no longer used.
 
 ### Notes
-- Only the featured-products block changes; the 5-category grid above stays as-is.
-- Existing `product-advantage.png` / `product-active.png` imports remain for the category grid cards that still reference them.
+- Only the hero section of `YzolLubricantsPage.tsx` changes. Highlights, About, and Product Lineup sections remain untouched.
