@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Droplet, Facebook, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, ArrowUp } from 'lucide-react';
+import logoAsset from '@/assets/wieser-logo.png.asset.json';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -40,21 +41,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="relative">
-                <Droplet className="h-10 w-10 text-accent fill-accent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="h-3 w-3 rounded-full bg-primary-foreground" />
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-extrabold text-xl text-primary-foreground tracking-tight">
-                  WIESER
-                </span>
-                <span className="font-heading text-xs text-primary-foreground/70 tracking-widest">
-                  PETROLEUM
-                </span>
-              </div>
+            <Link to="/" className="inline-flex items-center mb-6 bg-primary-foreground rounded-lg p-3">
+              <img src={logoAsset.url} alt="Wieser Petroleum" className="h-16 w-auto" />
             </Link>
             <p className="text-primary-foreground/70 mb-6">
               Delivering excellence in petroleum products since 2014. Trusted by customers across 18+ Indian states and 6+ countries worldwide.
