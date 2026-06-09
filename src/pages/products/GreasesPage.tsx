@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 import ProductCatalog from '@/components/products/ProductCatalog';
 import { Circle, Shield, Thermometer, Wrench } from 'lucide-react';
 import heroAsset from '@/assets/products/grease-hero.png.asset.json';
@@ -23,6 +24,11 @@ const GreasesPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Greases — Automotive, Industrial & Marine | Wieser"
+        description="Multi-purpose lithium and specialty greases for wheel bearings, industrial machinery and maintenance. Extreme-temperature performance."
+        path="/products/greases"
+      />
       <Header />
       <main className="pt-20">
         <section className="py-16 lg:py-24 bg-gradient-to-b from-primary/5 to-background">

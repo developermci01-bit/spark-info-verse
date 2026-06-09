@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCatalog from '@/components/products/ProductCatalog';
+import SEO from '@/components/SEO';
 import { Snowflake, Shield, Thermometer, Droplets, Leaf } from 'lucide-react';
 import heroAsset from '@/assets/products/coolant-hero.jpg.asset.json';
 const heroImg = heroAsset.url;
@@ -23,6 +24,11 @@ const CoolantsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Coolants & DEF/AdBlue — Cooling and Emissions"
+        description="Engine coolants and DEF/AdBlue for modern diesel SCR systems. Corrosion protection, temperature control and BS-VI/Euro 6 compliance."
+        path="/products/coolants"
+      />
       <Header />
       <main className="pt-20">
         <section className="py-16 lg:py-24 bg-gradient-to-b from-primary/5 to-background">
