@@ -150,6 +150,10 @@ const Products = () => {
                 <img
                   src={product.image}
                   alt={product.name}
+                  width={400}
+                  height={400}
+                  loading="lazy"
+                  decoding="async"
                   className="h-48 object-contain animate-float"
                 />
                 <div className="text-center md:text-left">
