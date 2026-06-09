@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,12 +10,32 @@ const Contact = () => {
     phone: '',
     subject: '',
     message: '',
+    website: '', // honeypot
   });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    if (submitting) return;
+    setSubmitting(true);
+    try {
+      const res = await fetch('/send-mail.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({ ok: false, error: 'Invalid server response' }));
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+      toast.success('Message sent! We will get back to you soon.');
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '', website: '' });
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Something went wrong';
+      toast.error(msg);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -197,8 +218,20 @@ const Contact = () => {
                 />
               </div>
 
-              <Button variant="accent" size="xl" type="submit" className="w-full">
-                Send Message
+              {/* Honeypot field — hidden from users, catches bots */}
+              <input
+                type="text"
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }}
+              />
+
+              <Button variant="accent" size="xl" type="submit" className="w-full" disabled={submitting}>
+                {submitting ? 'Sending...' : 'Send Message'}
                 <Send className="h-5 w-5" />
               </Button>
             </form>
