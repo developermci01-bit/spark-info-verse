@@ -65,6 +65,11 @@ const ProductsPreview = () => {
                 <img
                   src={allProductsAsset.url}
                   alt="Wieser Petroleum product range"
+                  width={800}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="relative h-72 md:h-96 object-contain animate-float"
                 />
               </div>

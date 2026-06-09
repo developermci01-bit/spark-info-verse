@@ -44,7 +44,7 @@ const CoolantsPage = () => {
               </div>
               <div className="relative animate-fade-in">
                 <div className="absolute -inset-4 bg-accent/20 blur-3xl rounded-full" />
-                <img src={heroImg} alt="Engine coolants and DEF products" width={1280} height={960} className="relative rounded-2xl border border-border shadow-2xl w-full h-auto max-h-[400px] object-cover" />
+                <img src={heroImg} alt="Engine coolants and DEF products" width={1280} height={960} loading="eager" fetchPriority="high" decoding="async" sizes="(min-width: 1024px) 50vw, 100vw" className="relative rounded-2xl border border-border shadow-2xl w-full h-auto max-h-[400px] object-cover" />
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ const CoolantsPage = () => {
             <div className="grid md:grid-cols-3 gap-6">
               {gallery.map((g, i) => (
                 <div key={i} className="group relative overflow-hidden rounded-xl border border-border aspect-[4/3]">
-                  <img src={g.src} alt={g.caption} loading="lazy" width={1024} height={768} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <img src={g.src} alt={g.caption} loading="lazy" decoding="async" width={1024} height={768} sizes="(min-width: 768px) 33vw, 100vw" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
                     <span className="font-heading font-semibold text-primary-foreground text-lg">{g.caption}</span>

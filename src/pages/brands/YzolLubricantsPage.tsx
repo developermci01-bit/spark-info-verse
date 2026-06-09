@@ -32,6 +32,10 @@ const YzolLubricantsPage = () => {
             alt="YZOL Lubricants premium product range"
             width={1920}
             height={768}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            sizes="100vw"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/40" />
@@ -44,7 +48,7 @@ const YzolLubricantsPage = () => {
                 </span>
               </div>
               <div className="inline-block bg-white rounded-xl p-4 mb-6 shadow-lg">
-                <img src={yzolLogo.url} alt="YZOL Lubricants logo" className="h-20 md:h-24 w-auto" />
+                <img src={yzolLogo.url} alt="YZOL Lubricants logo" width={240} height={96} loading="lazy" decoding="async" className="h-20 md:h-24 w-auto" />
               </div>
               <h1 className="section-title text-primary-foreground mb-6">
                 YZOL <span className="text-gradient">Lubricants</span>
