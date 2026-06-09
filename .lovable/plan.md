@@ -1,43 +1,56 @@
-## Add GA4 Page-View Tracking + Realtime Verification
+# Inline CDN assets for self-hosting
 
-### What we're building
-Wire up Google Analytics 4 so every React-Router route change fires a `page_view` event, and add a lightweight on-screen verification panel so you can confirm hits land in GA4 Realtime without leaving the site.
+Replace 10 `.asset.json` pointer files with the actual binary images committed to `src/assets/` and `src/assets/products/`, then rewrite every import that currently reads the pointer's `.url` so Vite bundles the real files. This makes the build portable off Lovable's `/__l5e/...` infrastructure.
 
-### Pages / surfaces affected
-- `index.html` – inject the GA4 `gtag.js` snippet  
-- `src/App.tsx` – mount a new route-tracking component next to `<ScrollToTop />`  
-- `src/components/AnalyticsTracker.tsx` (new) – listens to `useLocation()` and sends `page_view` events  
-- `src/components/AnalyticsDebugger.tsx` (new) – small floating panel that logs each fired event with timestamp and path
+## Files to materialize
 
-### Technical approach
-1. **Base script in `<head>`**  
-   Load `https://www.googletagmanager.com/gtag/js?id=G-MK0G2S0DKH` and the standard `dataLayer` bootstrap. Because this is a SPA, the initial page load is enough to create the tracker; subsequent “pages” are handled in JS.
+Download each from its current CDN `url` (recorded in the `.asset.json`) and write the binary to the path next to the existing stub:
 
-2. **Route-change tracker**  
-   A component that uses `useLocation()` from `react-router-dom`. On every `pathname` change it calls:
-   ```
-   gtag('event', 'page_view', {
-     page_location: window.location.href,
-     page_path: pathname,
-     page_title: document.title,
-   })
-   ```
-   This mirrors GA4’s native `page_view` and works inside BrowserRouter.
+- `src/assets/products/engine-hero.jpg`
+- `src/assets/products/coolant-hero.jpg`
+- `src/assets/products/gear-hero.png`
+- `src/assets/products/grease-hero.png`
+- `src/assets/products/hydraulic-hero.png`
+- `src/assets/yzol-logo.png`
+- `src/assets/yzol-banner.png`
+- `src/assets/products02.png`
+- `src/assets/advantage-grey.png`
+- `src/assets/adblue-def.png`
 
-3. **Realtime verification panel**  
-   A fixed-position, collapsible widget (bottom-left, styled with existing project tokens) that prints the last 10 fired events with:
-   - Event name  
-   - Route path  
-   - Timestamp  
-   - Status ("Sent to GA4")
-   It only renders in development/preview builds so it never appears on the live site.
+## Import rewrites
 
-### No other changes
-- No backend or database work.  
-- No modification to existing page components, SEO tags, or Tawk.to script.
+For every file in the project that does:
 
-### Acceptance criteria
-- [ ] Navigating from `/` → `/about` → `/products/engine-oils` fires a `page_view` event for each route.  
-- [ ] The debugger panel shows each event immediately after navigation.  
-- [ ] No console errors from `gtag` being undefined.  
-- [ ] Debugger is absent in production builds.
+```ts
+import heroAsset from '@/assets/.../foo.png.asset.json';
+const heroImg = heroAsset.url;
+```
+
+replace with a direct bundler import:
+
+```ts
+import heroImg from '@/assets/.../foo.png';
+```
+
+Known call sites (will grep for the full set before editing, but at minimum):
+- `src/pages/products/EngineOilsPage.tsx`
+- `src/pages/products/CoolantsPage.tsx`
+- `src/pages/products/GearBrakeOilsPage.tsx`
+- `src/pages/products/GreasesPage.tsx`
+- `src/pages/products/HydraulicOilsPage.tsx`
+- `src/pages/brands/YzolLubricantsPage.tsx` (yzol-logo, yzol-banner)
+- Any component referencing `products02`, `advantage-grey`, `adblue-def` (likely `Hero`, `WhyUs`, `Products`, or home sections — searched and updated).
+
+## Cleanup
+
+Delete the 10 `.asset.json` stub files after all imports compile against the real binaries.
+
+## Verification
+
+Run the build. Confirm no unresolved imports and that all 10 images appear in the Vite output as hashed assets (proving they're bundled locally, not referenced via `/__l5e/`).
+
+## Technical notes
+
+- Real PNG/JPG files imported via `import x from '...'` are processed by Vite and emitted into `dist/assets/` with content hashes — fully portable.
+- The `.asset.json` files are tiny JSON stubs; their CDN URLs (`/__l5e/assets-v1/...`) require Lovable's edge worker to resolve, which doesn't exist on a self-hosted server. Removing the indirection fixes self-hosting.
+- No visual, layout, or behavior changes — purely a build-portability fix.

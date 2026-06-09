@@ -4,8 +4,8 @@ import { ArrowRight, Fuel, Settings, Snowflake, Circle, Droplet } from 'lucide-r
 import productAdvantage from '@/assets/product-advantage.png';
 import productActive from '@/assets/product-active.png';
 import productGear from '@/assets/product-gear.png';
-import advantageGreyAsset from '@/assets/advantage-grey.png.asset.json';
-import adblueDefAsset from '@/assets/adblue-def.png.asset.json';
+import advantageGreyImg from '@/assets/advantage-grey.png';
+import adblueDefImg from '@/assets/adblue-def.png';
 
 const Products = () => {
   const products = [
@@ -58,7 +58,7 @@ const Products = () => {
       grade: '20W40 4T',
       type: '4-Stroke Engine Oil',
       specs: 'API-SN • JASO MA-2 • 100% Syn Technology',
-      image: advantageGreyAsset.url,
+      image: advantageGreyImg,
       href: '/products/engine-oils',
     },
     {
@@ -67,7 +67,7 @@ const Products = () => {
       grade: 'DEF / AdBlue®',
       type: 'Diesel Exhaust Fluid',
       specs: 'ISO 22241 • Pure & Reliable',
-      image: adblueDefAsset.url,
+      image: adblueDefImg,
       href: '/products/coolants',
     },
   ];
