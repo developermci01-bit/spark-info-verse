@@ -16,6 +16,8 @@ import HydraulicOilsPage from "./pages/products/HydraulicOilsPage";
 import CoolantsPage from "./pages/products/CoolantsPage";
 import YzolLubricantsPage from "./pages/brands/YzolLubricantsPage";
 import ScrollToTop from "./components/ScrollToTop";
+import AnalyticsTracker from "./components/AnalyticsTracker";
+import AnalyticsDebugger from "./components/AnalyticsDebugger";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +28,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <AnalyticsTracker />
+        <AnalyticsDebugger />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
