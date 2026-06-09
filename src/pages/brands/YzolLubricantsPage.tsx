@@ -4,8 +4,8 @@ import ProductCatalog from '@/components/products/ProductCatalog';
 import SEO from '@/components/SEO';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Droplet, Award, ShieldCheck, Gauge, Shield, Globe, Factory, Sparkles } from 'lucide-react';
-import yzolBanner from '@/assets/yzol-banner.png.asset.json';
-import yzolLogo from '@/assets/yzol-logo.png.asset.json';
+import yzolBanner from '@/assets/yzol-banner.png';
+import yzolLogo from '@/assets/yzol-logo.png';
 
 const categories = [
   { value: 'engine-oils', label: 'Engine Oils', title: 'Engine Oils' },
@@ -34,7 +34,7 @@ const YzolLubricantsPage = () => {
         {/* Hero Banner */}
         <section className="relative overflow-hidden">
           <img
-            src={yzolBanner.url}
+            src={yzolBanner}
             alt="YZOL Lubricants premium product range"
             width={1920}
             height={768}
@@ -54,7 +54,7 @@ const YzolLubricantsPage = () => {
                 </span>
               </div>
               <div className="inline-block bg-white rounded-xl p-4 mb-6 shadow-lg">
-                <img src={yzolLogo.url} alt="YZOL Lubricants logo" width={240} height={96} loading="lazy" decoding="async" className="h-20 md:h-24 w-auto" />
+                <img src={yzolLogo} alt="YZOL Lubricants logo" width={240} height={96} loading="lazy" decoding="async" className="h-20 md:h-24 w-auto" />
               </div>
               <h1 className="section-title text-primary-foreground mb-6">
                 YZOL <span className="text-gradient">Lubricants</span>

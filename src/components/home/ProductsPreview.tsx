@@ -1,7 +1,7 @@
 import { ArrowRight, Fuel, Settings, Snowflake, Circle, Droplet } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import allProductsAsset from '@/assets/products02.png.asset.json';
+import allProductsImg from '@/assets/products02.png';
 
 const ProductsPreview = () => {
   const categories = [
@@ -63,7 +63,7 @@ const ProductsPreview = () => {
               <div className="relative group">
                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/30 transition-colors" />
                 <img
-                  src={allProductsAsset.url}
+                  src={allProductsImg}
                   alt="Wieser Petroleum product range"
                   width={800}
                   height={800}
