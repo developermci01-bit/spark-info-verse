@@ -45,7 +45,9 @@ const HydraulicOilsPage = () => {
               </div>
               <div className="relative animate-fade-in">
                 <div className="absolute -inset-4 bg-accent/20 blur-3xl rounded-full" />
-                <img src={heroImg} alt="Hydraulic oils" width={1280} height={960} loading="eager" fetchPriority="high" decoding="async" sizes="(min-width: 1024px) 50vw, 100vw" className="relative rounded-2xl border border-border shadow-2xl w-full h-auto max-h-[400px] object-cover" />
+                <div className="relative aspect-[4/3] lg:aspect-[16/10] w-full overflow-hidden rounded-2xl border border-border shadow-2xl">
+                  <img src={heroImg} alt="Hydraulic oils" width={1280} height={960} loading="eager" fetchPriority="high" decoding="async" sizes="(min-width: 1024px) 50vw, 100vw" className="absolute inset-0 w-full h-full object-cover" />
+                </div>
               </div>
             </div>
           </div>
