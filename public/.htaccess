@@ -1,0 +1,51 @@
+# Apache configuration for SPA (React Router) on shared hosting
+# This file is copied to the build output (dist/) automatically by Vite.
+
+# Enable URL rewriting
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # If deploying into a subdirectory, set RewriteBase accordingly, e.g.:
+  # RewriteBase /subfolder/
+  RewriteBase /
+
+  # Don't rewrite real files or directories
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Send everything else to index.html so React Router can handle it
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Custom 404 fallback (covers servers without mod_rewrite)
+ErrorDocument 404 /index.html
+
+# Correct MIME types for modern assets
+<IfModule mod_mime.c>
+  AddType application/javascript            .js .mjs
+  AddType text/css                          .css
+  AddType image/svg+xml                     .svg
+  AddType image/webp                        .webp
+  AddType image/avif                        .avif
+  AddType application/manifest+json         .webmanifest
+  AddType application/font-woff2            .woff2
+</IfModule>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Cache hashed build assets aggressively, keep HTML fresh
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html                "access plus 0 seconds"
+  ExpiresByType text/css                 "access plus 1 year"
+  ExpiresByType application/javascript   "access plus 1 year"
+  ExpiresByType image/jpeg               "access plus 1 year"
+  ExpiresByType image/png                "access plus 1 year"
+  ExpiresByType image/webp               "access plus 1 year"
+  ExpiresByType image/svg+xml            "access plus 1 year"
+  ExpiresByType font/woff2               "access plus 1 year"
+</IfModule>
