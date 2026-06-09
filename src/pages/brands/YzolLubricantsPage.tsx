@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCatalog from '@/components/products/ProductCatalog';
+import SEO from '@/components/SEO';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Droplet, Award, ShieldCheck, Gauge, Shield, Globe, Factory, Sparkles } from 'lucide-react';
 import yzolBanner from '@/assets/yzol-banner.png.asset.json';
@@ -23,6 +24,11 @@ const YzolLubricantsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="YZOL Lubricants — Premium Range by Wieser Petroleum"
+        description="Explore the YZOL Lubricants range: engine oils, gear & brake oils, greases, hydraulic oils, coolants and DEF/AdBlue engineered for performance."
+        path="/brands/yzol-lubricants"
+      />
       <Header />
       <main className="pt-20">
         {/* Hero Banner */}

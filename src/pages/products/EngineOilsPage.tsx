@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 import { Fuel, Shield, Thermometer, Zap } from 'lucide-react';
 import ProductCatalog from '@/components/products/ProductCatalog';
 import heroAsset from '@/assets/products/engine-hero.jpg.asset.json';
@@ -23,6 +24,11 @@ const EngineOilsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Engine Oils — Cars, Bikes, Trucks | Wieser Petroleum"
+        description="High-performance engine oils for motorcycles, passenger cars and heavy-duty trucks. Superior wear protection and temperature stability."
+        path="/products/engine-oils"
+      />
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
