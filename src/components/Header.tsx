@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logoAsset from '@/assets/wieser-logo.png.asset.json';
+const logo = logoAsset.url;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
