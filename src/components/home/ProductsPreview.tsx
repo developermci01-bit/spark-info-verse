@@ -60,7 +60,7 @@ const ProductsPreview = () => {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Products Display */}
             <div className="flex justify-center items-center">
-              <div className="relative group w-72 h-72 md:w-96 md:h-96">
+              <div className="relative group">
                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/30 transition-colors" />
                 <img
                   src={allProductsAsset.url}
@@ -70,7 +70,7 @@ const ProductsPreview = () => {
                   loading="lazy"
                   decoding="async"
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="absolute inset-0 w-full h-full object-contain animate-float"
+                  className="relative h-72 md:h-96 object-contain animate-float"
                 />
               </div>
             </div>

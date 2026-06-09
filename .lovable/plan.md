@@ -1,28 +1,27 @@
-## Goal
-
-Prevent layout shift across every product image surface by giving each image container a fixed aspect ratio, so the space is reserved before the image loads.
+Tighten image loading across all product surfaces. The category pages already have width/height and lazy gallery thumbs; this pass adds the missing hints and applies the same pattern to the home/products surfaces that lack them.
 
 ## Changes
 
-**1. Hero images on category + brand pages** (`EngineOilsPage`, `GreasesPage`, `HydraulicOilsPage`, `GearBrakeOilsPage`, `CoolantsPage`)
-- The hero `<img>` currently uses `w-full h-auto max-h-[400px] object-cover` — height is intrinsic, so it shifts when the image swaps in.
-- Wrap the hero `<img>` in a `<div className="relative aspect-[4/3] lg:aspect-[16/10] max-h-[400px]">` and make the image `absolute inset-0 w-full h-full object-cover`. Container reserves space immediately.
+**1. Hero images on the 5 category pages + YZOL brand page**
+Files: `EngineOilsPage.tsx`, `GreasesPage.tsx`, `HydraulicOilsPage.tsx`, `GearBrakeOilsPage.tsx`, `CoolantsPage.tsx`, `brands/YzolLubricantsPage.tsx`
+- Add `loading="eager"`, `fetchpriority="high"`, `decoding="async"` (heroes are LCP — must load fast, not lazy).
+- Add `sizes="(min-width: 1024px) 50vw, 100vw"` so the browser knows the rendered width.
 
-**2. YZOL hero banner** (`YzolLubricantsPage` line 29 section)
-- The banner is already absolutely positioned inside a section whose height comes from inner content, so no shift — leave as-is. (Verified.)
+**2. Gallery thumbnails on the 5 category pages**
+Already have `loading="lazy"` + width/height. Add:
+- `decoding="async"`
+- `sizes="(min-width: 768px) 33vw, 100vw"` (3-col grid on md+, full width on mobile).
 
-**3. YZOL logo card** (`YzolLubricantsPage` line 51)
-- Logo `<img>` has explicit `width={240} height={96}` but uses `h-20 md:h-24 w-auto`, which produces variable width. Wrap in a fixed-size box `h-20 md:h-24 w-[200px] md:w-[240px]` with the image at `h-full w-full object-contain`.
+**3. Featured product image — `src/components/home/ProductsPreview.tsx` (line 65)**
+Below-the-fold on `/`. Add `loading="lazy"`, `decoding="async"`, explicit `width`/`height`.
 
-**4. Gallery thumbnails on the 5 category pages**
-- Already wrapped in `aspect-[4/3]` containers — no shift. Leave as-is.
+**4. Featured products image — `src/components/Products.tsx` (line 150)**
+Add `loading="lazy"`, `decoding="async"`, explicit `width`/`height`.
 
-**5. Featured-products image — `Products.tsx` (line 150)**
-- `<img>` uses `h-48 object-contain` with no width reservation. Wrap in `<div className="relative w-48 h-48 shrink-0">` and set image to `absolute inset-0 w-full h-full object-contain animate-float`.
-
-**6. Featured product image — `home/ProductsPreview.tsx` (line 65)**
-- `<img>` uses `h-72 md:h-96 object-contain` (height fixed, width fluid → shifts). Wrap in `<div className="relative w-72 h-72 md:w-96 md:h-96">` and set image to `absolute inset-0 w-full h-full object-contain animate-float`.
+**5. YZOL logo (line 47 of YzolLubricantsPage)**
+Add `loading="lazy"`, `decoding="async"`, `width`/`height` to prevent CLS.
 
 ## Notes
-- No visual or copy changes — same rendered sizes once images load. Only difference: the space is reserved before paint, so nothing jumps.
-- All `loading`, `decoding`, `sizes`, `width`, `height`, and `fetchPriority` attributes already added in the prior pass are preserved.
+
+- True responsive `srcset` would require multiple resized variants per image; the project's CDN serves a single original per asset, so we use the `sizes` hint + browser-native lazy loading instead. This gives most of the win (defer off-screen work, set fetch priority correctly, avoid layout shift) without a build-pipeline change.
+- No layout, copy, or visual changes — purely loading attributes.

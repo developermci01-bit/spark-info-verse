@@ -147,17 +147,15 @@ const Products = () => {
                 key={index}
                 className="bg-primary-foreground/10 backdrop-blur rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6"
               >
-                <div className="relative w-48 h-48 shrink-0">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    width={400}
-                    height={400}
-                    loading="lazy"
-                    decoding="async"
-                    className="absolute inset-0 w-full h-full object-contain animate-float"
-                  />
-                </div>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  width={400}
+                  height={400}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-48 object-contain animate-float"
+                />
                 <div className="text-center md:text-left">
                   <div className="text-accent font-heading font-bold text-lg mb-1">
                     {product.name}
